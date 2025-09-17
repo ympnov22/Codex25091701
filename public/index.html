@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garden Whack</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Garden Whack</h1>
+      <p>モグラが出てきたマスを素早くタップしてスコアを伸ばそう！</p>
+    </header>
+
+    <main class="game-area">
+      <section class="scoreboard" aria-live="polite">
+        <div class="score-item">
+          <span class="label">スコア</span>
+          <span id="score" class="value">0</span>
+        </div>
+        <div class="score-item">
+          <span class="label">ミス</span>
+          <span id="misses" class="value">0</span>
+        </div>
+        <div class="score-item">
+          <span class="label">残り時間</span>
+          <span id="time" class="value">60</span>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="start-button" class="primary">スタート</button>
+        <button id="reset-button" class="secondary" disabled>リセット</button>
+      </section>
+
+      <section class="board" aria-label="ゲームボード">
+        <div class="board-grid" id="board" role="grid"></div>
+      </section>
+
+      <section class="message" aria-live="assertive">
+        <p id="message"></p>
+      </section>
+
+      <section class="how-to">
+        <h2>遊び方</h2>
+        <ol>
+          <li>スタートボタンでゲーム開始。制限時間は60秒です。</li>
+          <li>光っているマスをクリックまたはタップしてモグラを叩きます。</li>
+          <li>モグラを逃すとミスが増えます。ミスが10回になるとゲーム終了です。</li>
+          <li>スコアは正確性と連続成功に応じて増えていきます。</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Rendered with care, frontend only.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
