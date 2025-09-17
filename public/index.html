@@ -19,6 +19,10 @@
           <span id="score" class="value">0</span>
         </div>
         <div class="score-item">
+          <span class="label">コンボ</span>
+          <span id="streak" class="value">0</span>
+        </div>
+        <div class="score-item">
           <span class="label">ミス</span>
           <span id="misses" class="value">0</span>
         </div>
@@ -26,11 +30,33 @@
           <span class="label">残り時間</span>
           <span id="time" class="value">60</span>
         </div>
+        <div class="score-item">
+          <span class="label">ハイスコア</span>
+          <span id="best-score" class="value">0</span>
+        </div>
       </section>
 
-      <section class="controls">
-        <button id="start-button" class="primary">スタート</button>
-        <button id="reset-button" class="secondary" disabled>リセット</button>
+      <section class="controls" aria-label="ゲーム設定と操作">
+        <fieldset class="difficulty" aria-label="難易度選択">
+          <legend>難易度</legend>
+          <label class="difficulty-option">
+            <input type="radio" name="difficulty" value="easy" />
+            やさしい
+          </label>
+          <label class="difficulty-option">
+            <input type="radio" name="difficulty" value="normal" checked />
+            ふつう
+          </label>
+          <label class="difficulty-option">
+            <input type="radio" name="difficulty" value="hard" />
+            むずかしい
+          </label>
+        </fieldset>
+
+        <div class="control-buttons">
+          <button id="start-button" class="primary">スタート</button>
+          <button id="reset-button" class="secondary" disabled>リセット</button>
+        </div>
       </section>
 
       <section class="board" aria-label="ゲームボード">
@@ -44,10 +70,10 @@
       <section class="how-to">
         <h2>遊び方</h2>
         <ol>
-          <li>スタートボタンでゲーム開始。制限時間は60秒です。</li>
+          <li>難易度を選んでスタートボタンを押すと60秒のゲームが始まります（難易度で制限時間とスピードが変化）。</li>
           <li>光っているマスをクリックまたはタップしてモグラを叩きます。</li>
-          <li>モグラを逃すとミスが増えます。ミスが10回になるとゲーム終了です。</li>
-          <li>スコアは正確性と連続成功に応じて増えていきます。</li>
+          <li>モグラを逃すとミスが増えます。ミスが上限に達するとゲーム終了です。</li>
+          <li>連続で成功するとコンボが伸びて獲得スコアが増加します。ハイスコアを更新して目指せ自己ベスト！</li>
         </ol>
       </section>
     </main>
